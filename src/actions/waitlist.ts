@@ -70,7 +70,7 @@ export async function joinWaitlist(
 
     return {
       message:
-        "Successfully joined the waitlist! We'll notify you when Ceptly launches.",
+        "You're on the list! We'll reach out when Ceptly is ready to organize your team.",
     };
   } catch (error) {
     console.error("Waitlist error:", error);

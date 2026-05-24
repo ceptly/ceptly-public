@@ -1,103 +1,158 @@
 "use client";
 
-import Link from "next/link";
 import {
-  ArrowRight,
   Sparkles,
   Loader2,
   CheckCircle,
   AlertCircle,
+  ArrowRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import GeometricDither from "./GeometricDither";
 import { Input } from "@/components/ui/input";
 import { useActionState } from "react";
 import { joinWaitlist } from "@/actions/waitlist";
+import { AppPreview } from "@/components/AppPreview";
 
 export function Hero() {
   const [state, action, pending] = useActionState(joinWaitlist, undefined);
 
   return (
-    <section className="relative overflow-hidden pt-16 md:pt-24 lg:pt-32 pb-16 min-h-[80vh] flex items-center">
-      <div className="absolute inset-0 z-0 hidden sm:block">
-        <GeometricDither />
+    <section className="relative overflow-hidden pt-12 md:pt-20 lg:pt-28 pb-20 md:pb-28 min-h-[85vh] flex items-center">
+      {/* Ambient background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-linear-to-br from-[#E6F9E6]/70 via-background to-background" />
+        <div className="absolute -top-24 -right-24 h-[480px] w-[480px] rounded-full bg-[#B1FFA5]/30 blur-3xl animate-blob" />
+        <div className="absolute top-1/3 -left-32 h-[400px] w-[400px] rounded-full bg-[#56FF3C]/15 blur-3xl animate-blob animation-delay-2000" />
+        <div className="absolute bottom-0 right-1/4 h-[320px] w-[320px] rounded-full bg-[#E6F9E6]/60 blur-3xl animate-blob animation-delay-4000" />
+        <div
+          className="absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, oklch(0.21 0.006 285.885 / 0.08) 1px, transparent 0)",
+            backgroundSize: "32px 32px",
+          }}
+        />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10 pointer-events-none">
-        <div className="flex flex-col items-center lg:items-start text-start lg:text-left gap-6 lg:gap-10 max-w-3xl pointer-events-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            Your team&apos;s AI chief of staff
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl p-2"
-          >
-            Ceptly keeps coordination and visibility on track—gathering context
-            from your team through async Slack check-ins, synthesizing updates
-            for founders, and surfacing blockers before they become sprint-level
-            problems.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col w-full justify-center lg:justify-start pt-4 gap-4"
-          >
-            <form
-              action={action}
-              className="flex flex-col sm:flex-row w-full max-w-md items-start gap-2"
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Copy + CTA */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 lg:gap-8 max-w-2xl mx-auto lg:mx-0">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+              className="inline-flex items-center gap-2 rounded-full border border-[#56FF3C]/25 bg-[#E6F9E6]/60 px-4 py-1.5 text-sm font-medium text-foreground/80 backdrop-blur-sm"
             >
-              <div className="w-full flex-1 space-y-2">
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Enter your company email"
-                  required
-                  className="h-12 bg-background/80 backdrop-blur-sm border-primary/20"
-                />
-                {state?.errors?.email && (
-                  <p className="text-sm text-red-500 text-left pl-1">
-                    {state.errors.email[0]}
-                  </p>
-                )}
-              </div>
-              <button
-                type="submit"
-                disabled={pending}
-                className="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-6 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {pending ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
-                  <>Join Waitlist</>
-                )}
-              </button>
-            </form>
+              <Sparkles className="h-3.5 w-3.5 text-[#56FF3C]" />
+              AI agents for flat organizations
+            </motion.div>
 
-            {state?.message && (
-              <div className="flex items-center gap-2 text-green-600 bg-green-50/50 p-2 rounded-md backdrop-blur-sm border border-green-200/50 w-fit">
-                <CheckCircle className="h-4 w-4" />
-                <span className="text-sm font-medium">{state.message}</span>
-              </div>
-            )}
-
-            {state?.errors?._form && (
-              <div className="flex items-center gap-2 text-red-600 bg-red-50/50 p-2 rounded-md backdrop-blur-sm border border-red-200/50 w-fit">
-                <AlertCircle className="h-4 w-4" />
-                <span className="text-sm font-medium">
-                  {state.errors._form[0]}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.08 }}
+              className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[3.5rem] lg:leading-[1.08]"
+            >
+              AI organizing{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 bg-linear-to-r from-[#56FF3C] to-[#B1FFA5] bg-clip-text text-transparent">
+                  organizations
                 </span>
-              </div>
-            )}
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.16 }}
+              className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl"
+            >
+              In the companies of tomorrow, elite individual contributors move
+              faster, create deeper, and stay inspired. Ceptly&apos;s AI agents
+              create perfect harmony between leadership direction and daily
+              execution—turning ambitious vision into{" "}
+              <span className="font-medium text-foreground">
+                effortless momentum
+              </span>
+              .
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.24 }}
+              className="flex flex-col w-full gap-4 pt-2"
+            >
+              <form
+                action={action}
+                className="flex flex-col sm:flex-row w-full max-w-lg items-start gap-2 p-1.5 rounded-xl border border-primary/10 bg-background/70 backdrop-blur-md shadow-sm shadow-[#56FF3C]/5"
+              >
+                <div className="w-full flex-1 space-y-2">
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="Enter your company email"
+                    required
+                    className="h-12 border-0 bg-transparent shadow-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                  />
+                  {state?.errors?.email && (
+                    <p className="text-sm text-red-500 text-left pl-1">
+                      {state.errors.email[0]}
+                    </p>
+                  )}
+                </div>
+                <button
+                  type="submit"
+                  disabled={pending}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-6 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring shrink-0 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
+                >
+                  {pending ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <>
+                      Join Waitlist
+                      <ArrowRight className="h-4 w-4" />
+                    </>
+                  )}
+                </button>
+              </form>
+
+              {state?.message && (
+                <div className="flex items-center gap-2 text-green-700 bg-[#E6F9E6]/80 p-2.5 rounded-lg border border-[#56FF3C]/20 w-fit mx-auto lg:mx-0">
+                  <CheckCircle className="h-4 w-4 shrink-0" />
+                  <span className="text-sm font-medium">{state.message}</span>
+                </div>
+              )}
+
+              {state?.errors?._form && (
+                <div className="flex items-center gap-2 text-red-600 bg-red-50/50 p-2.5 rounded-lg backdrop-blur-sm border border-red-200/50 w-fit mx-auto lg:mx-0">
+                  <AlertCircle className="h-4 w-4 shrink-0" />
+                  <span className="text-sm font-medium">
+                    {state.errors._form[0]}
+                  </span>
+                </div>
+              )}
+
+              <p className="text-xs text-muted-foreground/80">
+                No credit card required.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Visual */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative hidden sm:block w-full max-w-xl mx-auto lg:max-w-none lg:mx-0"
+          >
+            <div className="absolute -inset-4 rounded-3xl bg-linear-to-br from-[#56FF3C]/20 via-[#B1FFA5]/10 to-transparent blur-2xl" />
+            <div className="relative overflow-hidden rounded-2xl border border-[#56FF3C]/15 bg-background shadow-xl shadow-[#56FF3C]/10 max-h-[520px]">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-linear-to-t from-background/90 to-transparent" />
+              <AppPreview />
+            </div>
           </motion.div>
         </div>
       </div>

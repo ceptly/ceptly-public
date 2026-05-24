@@ -20,17 +20,18 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Ceptly — Your Team's AI Chief of Staff",
+  title: "Ceptly — AI Organizing Organizations",
   description:
-    "AI-powered team management for growing teams. Async Slack check-ins, weekly digests, and real-time alerts—so leaders stay informed without extra status meetings.",
+    "AI agents for flat organizations. Ceptly creates harmony between leadership direction and daily execution—with async Slack check-ins, synthesized digests, and on-demand org intelligence.",
   keywords: [
     "flat organization",
+    "AI agents",
     "team management",
     "slack",
-    "AI agents",
     "startup",
-    "team leads",
+    "executive visibility",
     "check-ins",
+    "management infrastructure",
   ],
 };
 

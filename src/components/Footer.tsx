@@ -19,8 +19,9 @@ export function Footer() {
               <span className="text-lg font-bold tracking-tight">Ceptly</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-xs mb-6">
-              AI-powered team management for flat organizations. Let your team
-              focus on real work.
+              AI organizing organizations. Ceptly&apos;s agents handle
+              coordination and visibility for flat teams—so ICs focus on deep
+              work and leaders stay aligned without the overhead.
             </p>
             <div className="flex gap-4"></div>
           </div>

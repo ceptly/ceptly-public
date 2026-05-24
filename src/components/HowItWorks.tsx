@@ -5,19 +5,19 @@ import { MessageSquare, Sparkles, Hash } from "lucide-react";
 
 const steps = [
   {
-    title: "Check-ins in Slack",
+    title: "Agents gather context",
     description:
-      "On your schedule, Ceptly sends each teammate a short DM—conversational, not a form. People share what they’re working on, blockers, and how workload feels.",
+      "On your schedule, Ceptly DMs each teammate for a short, conversational check-in. Progress, blockers, workload—captured in Slack without forms or syncs.",
   },
   {
-    title: "Context gets synthesized",
+    title: "Signals become clarity",
     description:
-      "When the check-in window closes, Ceptly reads every response and pulls out themes: progress, blockers, sentiment, and questions for leadership.",
+      "When the window closes, a synthesis agent reads every response and extracts themes: momentum, blockers, sentiment, and what leadership needs to act on.",
   },
   {
-    title: "Leaders stay in the loop",
+    title: "Leaders act with confidence",
     description:
-      "A digest lands in your leadership channel. Ask follow-ups in Slack anytime—answers are grounded in what your team actually said.",
+      "Digests land in your leadership channel. Ask follow-up questions anytime—answers are grounded in what your team actually said, not guesswork.",
   },
 ];
 
@@ -36,13 +36,13 @@ function SlackPreview() {
 
       <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4 md:p-5">
         <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-muted px-4 py-3 text-sm">
-          Hey Sarah — quick check-in! What are you focused on this week?
+          Hey Sarah — quick check-in. What are you focused on this week?
         </div>
         <div className="max-w-[92%] self-end rounded-2xl rounded-tr-sm bg-primary px-4 py-3 text-sm text-primary-foreground">
-          Finishing the onboarding flow and a dashboard bug fix.
+          Onboarding flow and a dashboard bug fix. Momentum is good.
         </div>
         <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-muted px-4 py-3 text-sm">
-          Got it. Any blockers or things slowing you down?
+          Nice. Anything blocking you or slowing momentum?
         </div>
         <div className="max-w-[92%] self-end rounded-2xl rounded-tr-sm bg-primary px-4 py-3 text-sm text-primary-foreground">
           Waiting on design for the empty state screens.
@@ -54,14 +54,15 @@ function SlackPreview() {
             leadership-digest
           </div>
           <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Weekly Team Digest
+            Weekly Org Pulse
           </p>
           <p className="mt-2 text-sm">
-            <span className="font-medium">Blockers (1):</span> Sarah → waiting
-            on design: empty state screens
+            <span className="font-medium">Blockers (1):</span> Sarah → design
+            review pending on empty state screens
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Workload avg 3.2 / 5 · 4 of 5 check-ins complete
+            Team momentum steady · Workload avg 3.2 / 5 · 4 of 5 check-ins
+            complete
           </p>
         </div>
       </div>
@@ -81,7 +82,7 @@ export function HowItWorks() {
             transition={{ duration: 0.5 }}
             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
           >
-            How Ceptly works
+            How Ceptly organizes your team
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -90,8 +91,8 @@ export function HowItWorks() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
           >
-            Your team stays in Slack. Ceptly handles the rest—from async
-            check-ins to leadership-ready summaries.
+            ICs stay in Slack. Leaders get clarity. AI agents handle everything
+            in between—from async pulse checks to executive-ready summaries.
           </motion.p>
         </div>
 
