@@ -23,38 +23,15 @@ export function Footer() {
               coordination and visibility for flat teams—so ICs focus on deep
               work and leaders stay aligned without the overhead.
             </p>
-            <div className="flex gap-4"></div>
+            <div className="flex gap-4">
+              <Link
+                href="/pricing"
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Pricing
+              </Link>
+            </div>
           </div>
-          {/*
-          <div>
-            <h3 className="text-sm font-semibold mb-4">Product</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link href="#" className="hover:text-foreground transition-colors">Features</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition-colors">Integrations</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition-colors">Pricing</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition-colors">Changelog</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-sm font-semibold mb-4">Resources</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link href="#" className="hover:text-foreground transition-colors">Documentation</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition-colors">Guides</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition-colors">Community</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition-colors">Help Center</Link></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-sm font-semibold mb-4">Company</h3>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link href="#" className="hover:text-foreground transition-colors">About</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition-colors">Blog</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition-colors">Careers</Link></li>
-              <li><Link href="#" className="hover:text-foreground transition-colors">Legal</Link></li>
-            </ul>
-          </div>*/}
         </div>
 
         <div className="mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
