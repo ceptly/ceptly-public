@@ -36,7 +36,7 @@ See the backend `docs/stripe-setup.md` for the full checklist (webhook URL, succ
 
 ```bash
 # App URLs
-NEXT_PUBLIC_APP_URL=https://app.ceptly.com
+NEXT_PUBLIC_APP_URL=https://app.ceptly.ai
 
 # Stripe Payment Link (subscribe-first fallback)
 NEXT_PUBLIC_STRIPE_PAYMENT_LINK=https://buy.stripe.com/eVqcN63tWaPS0NI1QkefC00
