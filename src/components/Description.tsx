@@ -7,22 +7,22 @@ const features = [
   {
     title: "Conversational check-ins",
     description:
-      "An Agent DMs your team on a schedule you control—short, async conversations, not forms. ICs share progress and blockers in Slack so they can stay focused on deep work, not status updates.",
+      "Ceptly DMs your team on a schedule you control—short async conversations, not forms. Teammates share progress, blockers, and Linear issue status in Slack.",
   },
   {
-    title: "Leadership-ready synthesis",
+    title: "AI scheduling assistant",
     description:
-      "After each check-in window, a Synthesis Agent turns raw responses into a scannable digest: who shipped what, open blockers, workload sentiment, and early flags when someone goes quiet or overload is trending.",
+      "Describe what you want to ask and when on Chat. Ceptly builds a publishable schedule—participants, cadence, and where rollups get posted.",
   },
   {
-    title: "Org intelligence on demand",
+    title: "Team insights chat",
     description:
-      'Founders and executives ask natural-language questions in Slack—"Is anyone blocked?" or "How is morale trending?"—and get answers grounded in real check-in data, with sources cited.',
+      'Ask natural-language questions about your team—"Is anyone blocked?" or "How is morale trending?"—and get answers grounded in check-in data and Slack history.',
   },
   {
-    title: "Strategy-driven questions",
+    title: "One-off Slack reach-out",
     description:
-      "Use the Question Editor to define, reorder, and preview what your agents ask—with an AI suggester that builds a set from your goals. Publish when ready; changes take effect on the next scheduled check-in.",
+      "Need a follow-up on a blocker or want to share an update? Ceptly messages anyone on your roster in Slack and keeps you in the loop.",
   },
 ];
 
@@ -52,9 +52,9 @@ export function Description() {
           >
             As teams grow, keeping everyone aligned gets harder without extra
             meetings. Ceptly deploys AI agents between leadership and individual
-            contributors—gathering context, surfacing blockers, and keeping
-            everyone moving without the bloat. You see problems earlier and your team spends less time reporting
-            up.
+            contributors—scheduling standups, surfacing blockers, and answering
+            questions from real check-in data. You see problems earlier and your
+            team spends less time reporting up.
           </motion.p>
         </div>
 

@@ -1,23 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquare, Sparkles, Hash } from "lucide-react";
+import { Calendar, MessageSquare, Sparkles } from "lucide-react";
 
 const steps = [
   {
-    title: "Agents gather context",
+    title: "Scheduling",
     description:
-      "On your schedule, Ceptly DMs each teammate for a short, conversational check-in. Progress, blockers, workload—captured in Slack without forms or syncs.",
+      "Describe check-ins in plain English on Chat—daily standup cadence, who participates, and where rollups land. Ceptly builds a schedule you can publish and adjust anytime.",
   },
   {
-    title: "Signals become clarity",
+    title: "Slack check-ins",
     description:
-      "When the window closes, a synthesis agent reads every response and extracts themes: momentum, blockers, sentiment, and what leadership needs to act on.",
+      "On your schedule, Ceptly DMs each teammate for a short, conversational standup. Progress, blockers, and Linear issues—captured without forms or sync meetings.",
   },
   {
-    title: "Leaders act with confidence",
+    title: "Team insights & reach-out",
     description:
-      "Digests land in your leadership channel. Ask follow-up questions anytime—answers are grounded in what your team actually said, not guesswork.",
+      "Ask about blockers, morale, or check-in history in chat. Reach out to anyone in Slack for a follow-up. After each window, rollups land in your leadership channel.",
   },
 ];
 
@@ -36,34 +36,21 @@ function SlackPreview() {
 
       <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4 md:p-5">
         <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-muted px-4 py-3 text-sm">
-          Hey Sarah — quick check-in. What are you focused on this week?
+          Quick standup — what did you work on since last check-in?
         </div>
         <div className="max-w-[92%] self-end rounded-2xl rounded-tr-sm bg-primary px-4 py-3 text-sm text-primary-foreground">
-          Onboarding flow and a dashboard bug fix. Momentum is good.
+          Finished the onboarding flow. Working on ENG-142 dashboard bug fix
+          today.
         </div>
         <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-muted px-4 py-3 text-sm">
-          Nice. Anything blocking you or slowing momentum?
+          Got it — I changed the status of the Dashboard fix ENG-142 to Done.
+          Any blockers on ENG-158?
         </div>
         <div className="max-w-[92%] self-end rounded-2xl rounded-tr-sm bg-primary px-4 py-3 text-sm text-primary-foreground">
-          Waiting on design for the empty state screens.
+          Waiting on design for the empty state screens on ENG-158.
         </div>
-
-        <div className="mt-2 rounded-lg border border-dashed border-primary/25 bg-[#E6F9E6]/60 p-4">
-          <div className="mb-2 flex items-center gap-2 text-xs font-medium text-muted-foreground">
-            <Hash className="h-3.5 w-3.5" />
-            leadership-digest
-          </div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Weekly Org Pulse
-          </p>
-          <p className="mt-2 text-sm">
-            <span className="font-medium">Blockers (1):</span> Sarah → design
-            review pending on empty state screens
-          </p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Team momentum steady · Workload avg 3.2 / 5 · 4 of 5 check-ins
-            complete
-          </p>
+        <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-muted px-4 py-3 text-sm">
+          Got it, I placed an update in the comments on ENG-158. Thanks for the update!
         </div>
       </div>
     </div>
@@ -91,8 +78,8 @@ export function HowItWorks() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
           >
-            ICs stay in Slack. Leaders get clarity. AI agents handle everything
-            in between—from async pulse checks to executive-ready summaries.
+            Set up schedules in chat. ICs answer in Slack. Leaders get rollups,
+            team insights, and one-off reach-out—without status meetings.
           </motion.p>
         </div>
 
@@ -108,11 +95,11 @@ export function HowItWorks() {
               <div key={step.title} className="flex gap-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   {index === 0 ? (
-                    <MessageSquare className="h-5 w-5" />
+                    <Calendar className="h-5 w-5" />
                   ) : index === 1 ? (
-                    <Sparkles className="h-5 w-5" />
+                    <MessageSquare className="h-5 w-5" />
                   ) : (
-                    <Hash className="h-5 w-5" />
+                    <Sparkles className="h-5 w-5" />
                   )}
                 </div>
                 <div>

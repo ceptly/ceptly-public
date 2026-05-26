@@ -69,10 +69,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.16 }}
               className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl"
             >
-              In the companies of tomorrow, elite individual contributors move
-              faster, create deeper, and stay inspired. Ceptly&apos;s AI agents
-              create perfect harmony between leadership direction and daily
-              execution—turning ambitious vision into{" "}
+              Schedule standups in chat, run async check-ins in Slack, and ask
+              Team insights questions grounded in what your team actually
+              said—turning ambitious vision into{" "}
               <span className="font-medium text-foreground">
                 effortless momentum
               </span>
