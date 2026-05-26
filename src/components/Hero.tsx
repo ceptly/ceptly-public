@@ -55,7 +55,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.08 }}
               className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[3.5rem] lg:leading-[1.08]"
             >
-              Your Team's AI Chief of Staff
+              Your Team&apos;s AI Chief of Staff
             </motion.h1>
 
             <motion.p
