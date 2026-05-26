@@ -55,12 +55,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.08 }}
               className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[3.5rem] lg:leading-[1.08]"
             >
-              AI organizing{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 bg-linear-to-r from-[#56FF3C] to-[#B1FFA5] bg-clip-text text-transparent">
-                  organizations
-                </span>
-              </span>
+              Your Team's AI Chief of Staff
             </motion.h1>
 
             <motion.p
