@@ -5,24 +5,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
   {
-    title: "Conversational check-ins",
+    title: "Standup automation",
     description:
-      "Ceptly DMs your team on a schedule you control—short async conversations, not forms. Teammates share progress, blockers, and Linear issue status in Slack.",
+      "Replace the daily sync with async Slack standups on a schedule you control. Ceptly DMs each teammate, references their Linear issues, and posts rollups to your leadership channel—no timezone juggling, no round-robin calls.",
   },
   {
-    title: "AI scheduling assistant",
+    title: "Latest from every IC",
     description:
-      "Describe what you want to ask and when on Chat. Ceptly builds a publishable schedule—participants, cadence, and where rollups get posted.",
-  },
-  {
-    title: "Team insights chat",
-    description:
-      'Ask natural-language questions about your team—"Is anyone blocked?" or "How is morale trending?"—and get answers grounded in check-in data and Slack history.',
-  },
-  {
-    title: "One-off Slack reach-out",
-    description:
-      "Need a follow-up on a blocker or want to share an update? Ceptly messages anyone on your roster in Slack and keeps you in the loop.",
+      "Ceptly gathers fresh context from individual contributors through short, conversational check-ins—not forms or spreadsheets. Progress, blockers, and workload land in one place so leaders always know what's happening on the ground.",
   },
 ];
 
