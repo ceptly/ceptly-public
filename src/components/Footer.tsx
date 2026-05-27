@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 
 export function Footer() {
@@ -18,19 +17,11 @@ export function Footer() {
               />
               <span className="text-lg font-bold tracking-tight">Ceptly</span>
             </div>
-            <p className="text-sm text-muted-foreground max-w-xs mb-6">
+            <p className="text-sm text-muted-foreground max-w-xs">
               AI organizing organizations. Ceptly&apos;s agents handle
               coordination and visibility for flat teams—so ICs focus on deep
               work and leaders stay aligned without the overhead.
             </p>
-            <div className="flex gap-4">
-              <Link
-                href="/pricing"
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Pricing
-              </Link>
-            </div>
           </div>
         </div>
 
