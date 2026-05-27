@@ -18,6 +18,18 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Deployment
+
+Hosted on **AWS Amplify** at [https://ceptly.ai](https://ceptly.ai). Build settings live in `amplify.yml`.
+
+Set these in **Amplify Console → Environment variables** (and copy `.env.example` for local):
+
+| Variable | Production example |
+|----------|-------------------|
+| `NEXT_PUBLIC_APP_URL` | `https://app.ceptly.ai` |
+| `NEXT_PUBLIC_BACKEND_URL` | Your API base URL |
+| `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` | Stripe payment link URL |
+
 ## Environment variables
 
 Create a `.env.local` file for local development:
@@ -33,17 +45,6 @@ NEXT_PUBLIC_BACKEND_URL=http://localhost:3000
 Configure trial length, success URL, and billing in the [Stripe Dashboard](https://dashboard.stripe.com/payment-links) for your payment link.
 
 See the backend `docs/stripe-setup.md` for the full checklist (webhook URL, success URL, trial, and env vars).
-
-```bash
-# App URLs
-NEXT_PUBLIC_APP_URL=https://app.ceptly.ai
-
-# Stripe Payment Link (subscribe-first fallback)
-NEXT_PUBLIC_STRIPE_PAYMENT_LINK=https://buy.stripe.com/eVqcN63tWaPS0NI1QkefC00
-
-# Waitlist (Hero form)
-NEXT_PUBLIC_BACKEND_URL=http://localhost:3000
-```
 
 ## Learn More
 
