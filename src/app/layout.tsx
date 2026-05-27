@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+
+import { createSiteMetadata } from "@/lib/site-metadata";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,21 +21,7 @@ const montserrat = Montserrat({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Ceptly — Your Team's AI Chief of Staff",
-  description:
-    "AI agents for flat organizations. Ceptly creates harmony between leadership direction and daily execution—with async Slack check-ins, synthesized digests, and on-demand org intelligence.",
-  keywords: [
-    "flat organization",
-    "AI agents",
-    "team management",
-    "slack",
-    "startup",
-    "executive visibility",
-    "check-ins",
-    "management infrastructure",
-  ],
-};
+export const metadata: Metadata = createSiteMetadata();
 
 export default function RootLayout({
   children,
