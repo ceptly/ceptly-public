@@ -22,7 +22,7 @@ const included = [
   "One-off Slack reach-out to any teammate",
   "Linear integration for issue-aware team Q&A",
   "Team roster with Slack and Linear import",
-  "Unlimited workspace members and admins",
+  "Per-seat pricing for workspace members (pending invites count too)",
   "Role-based access for founders, admins, leads, and ICs",
 ];
 
@@ -92,11 +92,11 @@ export function Pricing() {
               <CardTitle className="text-4xl font-extrabold tracking-tight">
                 $20
                 <span className="text-lg font-medium text-muted-foreground">
-                  /month
+                  /seat/month
                 </span>
               </CardTitle>
               <p className="text-sm text-muted-foreground">
-                10-day free trial · per workspace · cancel anytime
+                10-day free trial · billed per teammate seat · cancel anytime
               </p>
             </CardHeader>
 
