@@ -84,7 +84,7 @@ export function Pricing() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="mx-auto max-w-lg"
         >
-          <Card className="border-[#56FF3C]/20 bg-background/80 shadow-xl shadow-[#56FF3C]/10">
+          <Card className="border-[#56FF3C]/20 bg-background/80">
             <CardHeader className="text-center">
               <CardDescription className="text-sm font-medium uppercase tracking-wide">
                 Starter

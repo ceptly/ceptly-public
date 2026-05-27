@@ -19,10 +19,14 @@ export async function joinWaitlist(
   const { email } = validatedFields.data;
 
   try {
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+    const backendUrl =
+      process.env.NEXT_PUBLIC_BACKEND_URL ??
+      process.env.NEXT_PUBLIC_API_URL;
 
     if (!backendUrl) {
-      console.error("NEXT_PUBLIC_BACKEND_URL is not defined");
+      console.error(
+        "NEXT_PUBLIC_BACKEND_URL (or NEXT_PUBLIC_API_URL) is not defined",
+      );
       return {
         errors: {
           _form: ["Configuration error. Please contact support."],

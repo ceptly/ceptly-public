@@ -19,11 +19,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden pt-12 md:pt-20 lg:pt-28 pb-20 md:pb-28 min-h-[85vh] flex items-center">
       {/* Ambient background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-linear-to-br from-[#E6F9E6]/70 via-background to-background" />
-        <div className="absolute -top-24 -right-24 h-[480px] w-[480px] rounded-full bg-[#B1FFA5]/30 blur-3xl animate-blob" />
-        <div className="absolute top-1/3 -left-32 h-[400px] w-[400px] rounded-full bg-[#56FF3C]/15 blur-3xl animate-blob animation-delay-2000" />
-        <div className="absolute bottom-0 right-1/4 h-[320px] w-[320px] rounded-full bg-[#E6F9E6]/60 blur-3xl animate-blob animation-delay-4000" />
+      <div className="absolute inset-0 z-0 pointer-events-none bg-[#FEFEFE]">
         <div
           className="absolute inset-0 opacity-[0.35]"
           style={{
@@ -32,7 +28,6 @@ export function Hero() {
             backgroundSize: "32px 32px",
           }}
         />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -142,8 +137,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative hidden sm:block w-full max-w-xl mx-auto lg:max-w-none lg:mx-0"
           >
-            <div className="absolute -inset-4 rounded-3xl bg-linear-to-br from-[#56FF3C]/20 via-[#B1FFA5]/10 to-transparent blur-2xl" />
-            <div className="relative overflow-hidden rounded-2xl border border-[#56FF3C]/15 bg-background shadow-xl shadow-[#56FF3C]/10 max-h-[520px]">
+            <div className="relative overflow-hidden rounded-2xl border border-[#56FF3C]/15 bg-background max-h-[520px]">
               <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-linear-to-t from-background/90 to-transparent" />
               <AppPreview />
             </div>
