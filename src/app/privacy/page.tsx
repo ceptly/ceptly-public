@@ -183,9 +183,9 @@ export default function PrivacyPage() {
                   Certain Ceptly features use third-party AI services to
                   summarize check-ins, answer team questions, and assist with
                   coordination workflows. Content submitted through those
-                  features may be transmitted to our AI providers for
-                  processing solely to deliver the requested functionality for
-                  your workspace.
+                  features may be transmitted to our AI providers for processing
+                  solely to deliver the requested functionality for your
+                  workspace.
                 </p>
               </Section>
 
@@ -195,18 +195,19 @@ export default function PrivacyPage() {
                   active or as needed to provide the Service, comply with legal
                   obligations, resolve disputes, and enforce our agreements.
                   When you delete your account or disconnect an integration, we
-                  delete or anonymize associated data within a reasonable period,
-                  unless we must retain it for legal or security reasons.
+                  delete or anonymize associated data within a reasonable
+                  period, unless we must retain it for legal or security
+                  reasons.
                 </p>
               </Section>
 
               <Section title="6. Security">
                 <p>
                   We use administrative, technical, and organizational measures
-                  designed to protect personal information, including
-                  encryption in transit, access controls, and secure credential
-                  storage. No method of transmission or storage is completely
-                  secure, and we cannot guarantee absolute security.
+                  designed to protect personal information, including encryption
+                  in transit, access controls, and secure credential storage. No
+                  method of transmission or storage is completely secure, and we
+                  cannot guarantee absolute security.
                 </p>
               </Section>
 

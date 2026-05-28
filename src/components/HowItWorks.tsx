@@ -50,7 +50,8 @@ function SlackPreview() {
           Waiting on design for the empty state screens on ENG-158.
         </div>
         <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-muted px-4 py-3 text-sm">
-          Got it, I placed an update in the comments on ENG-158. Thanks for the update!
+          Got it, I placed an update in the comments on ENG-158. Thanks for the
+          update!
         </div>
       </div>
     </div>

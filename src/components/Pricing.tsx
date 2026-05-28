@@ -3,7 +3,11 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
-import { STRIPE_PAYMENT_LINK, APP_LOGIN_URL, APP_SIGNUP_URL } from "@/lib/stripe-config";
+import {
+  STRIPE_PAYMENT_LINK,
+  APP_LOGIN_URL,
+  APP_SIGNUP_URL,
+} from "@/lib/stripe-config";
 import {
   Card,
   CardContent,
