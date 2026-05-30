@@ -16,7 +16,9 @@ export function Footer() {
                 width={32}
                 height={32}
               />
-              <span className="text-lg font-bold tracking-tight">Ceptly</span>
+              <span className="font-brand text-left text-[25px] font-bold tracking-tight">
+                Ceptly
+              </span>
             </div>
             <p className="text-sm text-muted-foreground max-w-xs">
               AI organizing organizations. Ceptly&apos;s agents handle

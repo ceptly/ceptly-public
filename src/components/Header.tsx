@@ -57,7 +57,9 @@ export function Header() {
                 width={32}
                 height={32}
               />
-              <span className="text-lg font-bold tracking-tight">Ceptly</span>
+              <span className="font-brand text-left text-[25px] font-bold tracking-tight">
+                Ceptly
+              </span>
             </Link>
           </div>
 
@@ -117,7 +119,9 @@ export function Header() {
                 width={28}
                 height={28}
               />
-              <span className="text-base font-bold tracking-tight">Ceptly</span>
+              <span className="font-brand text-base font-bold tracking-tight">
+                Ceptly
+              </span>
             </Link>
             <button
               type="button"

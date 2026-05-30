@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Montserrat } from "next/font/google";
+import { Alegreya, Aldrich, Geist, Geist_Mono, Montserrat, Open_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import { createSiteMetadata } from "@/lib/site-metadata";
@@ -21,6 +21,24 @@ const montserrat = Montserrat({
   weight: ["400", "500", "600", "700"],
 });
 
+const aldrich = Aldrich({
+  variable: "--font-aldrich",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const alegreya = Alegreya({
+  variable: "--font-alegreya",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
 export const metadata: Metadata = createSiteMetadata();
 
 export default function RootLayout({
@@ -31,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${aldrich.variable} ${openSans.variable} ${alegreya.variable} antialiased bg-background text-foreground`}
       >
         {children}
         <Analytics />

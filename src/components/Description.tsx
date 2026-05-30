@@ -29,7 +29,7 @@ export function Description() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+            className="font-brand text-3xl font-normal tracking-tighter sm:text-4xl md:text-5xl"
           >
             Management as infrastructure
           </motion.h2>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Calendar, MessageSquare, Sparkles } from "lucide-react";
+import { AppPreview } from "@/components/AppPreview";
 
 const steps = [
   {
@@ -21,43 +22,6 @@ const steps = [
   },
 ];
 
-function SlackPreview() {
-  return (
-    <div className="flex h-full min-h-[500px] flex-col overflow-hidden rounded-xl border bg-card shadow-lg md:min-h-[600px]">
-      <div className="flex items-center gap-3 border-b bg-muted/40 px-4 py-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
-          C
-        </div>
-        <div>
-          <p className="text-sm font-semibold">Ceptly</p>
-          <p className="text-xs text-muted-foreground">Direct message</p>
-        </div>
-      </div>
-
-      <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4 md:p-5">
-        <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-muted px-4 py-3 text-sm">
-          Quick standup — what did you work on since last check-in?
-        </div>
-        <div className="max-w-[92%] self-end rounded-2xl rounded-tr-sm bg-primary px-4 py-3 text-sm text-primary-foreground">
-          Finished the onboarding flow. Working on ENG-142 dashboard bug fix
-          today.
-        </div>
-        <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-muted px-4 py-3 text-sm">
-          Got it — I changed the status of the Dashboard fix ENG-142 to Done.
-          Any blockers on ENG-158?
-        </div>
-        <div className="max-w-[92%] self-end rounded-2xl rounded-tr-sm bg-primary px-4 py-3 text-sm text-primary-foreground">
-          Waiting on design for the empty state screens on ENG-158.
-        </div>
-        <div className="max-w-[92%] rounded-2xl rounded-tl-sm bg-muted px-4 py-3 text-sm">
-          Got it, I placed an update in the comments on ENG-158. Thanks for the
-          update!
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-16 md:py-24 lg:py-32">
@@ -68,7 +32,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+            className="font-brand text-3xl font-normal tracking-tighter sm:text-4xl md:text-5xl"
           >
             How Ceptly organizes your team
           </motion.h2>
@@ -118,9 +82,12 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="w-full"
+            className="relative w-full"
           >
-            <SlackPreview />
+            <div className="relative overflow-hidden rounded-2xl border border-[#56FF3C]/15 bg-background max-h-[520px] shadow-lg">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-linear-to-t from-background/90 to-transparent" />
+              <AppPreview />
+            </div>
           </motion.div>
         </div>
       </div>
