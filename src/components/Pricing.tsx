@@ -16,6 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const included = [
   "Slack conversational check-ins on your schedule",
@@ -67,7 +68,7 @@ export function Pricing() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+            className="scroll-m-20 text-3xl font-extrabold tracking-tight text-balance sm:text-4xl md:text-5xl"
           >
             Simple pricing for flat teams
           </motion.h1>
@@ -116,19 +117,20 @@ export function Pricing() {
             </CardContent>
 
             <CardFooter className="flex flex-col gap-3">
-              <Link
-                href={APP_SIGNUP_URL}
-                className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:scale-[1.01] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              <Button
+                asChild
+                variant="brand"
+                size="lg"
+                className="h-12 w-full rounded-lg shadow-lg transition-all hover:scale-[1.01]"
               >
-                Create account
-                <ArrowRight className="size-4" />
-              </Link>
-              <Link
-                href={STRIPE_PAYMENT_LINK}
-                className="inline-flex h-10 w-full items-center justify-center rounded-lg border border-border px-6 text-sm font-medium transition-colors hover:bg-muted"
-              >
-                Subscribe first via Stripe
-              </Link>
+                <Link href={APP_SIGNUP_URL}>
+                  Create account
+                  <ArrowRight className="size-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="h-10 w-full rounded-lg">
+                <Link href={STRIPE_PAYMENT_LINK}>Subscribe first via Stripe</Link>
+              </Button>
               <p className="text-center text-xs text-muted-foreground">
                 Recommended: create your account first, then start your trial in
                 the app. Already subscribed?{" "}
@@ -149,7 +151,7 @@ export function Pricing() {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="mx-auto mt-16 max-w-2xl md:mt-24"
         >
-          <h2 className="mb-8 text-center text-2xl font-bold tracking-tight">
+          <h2 className="mb-8 scroll-m-20 text-center text-2xl font-semibold tracking-tight">
             Frequently asked questions
           </h2>
           <dl className="space-y-6">

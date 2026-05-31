@@ -32,7 +32,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="font-brand text-3xl font-normal tracking-tighter sm:text-4xl md:text-5xl"
+            className="scroll-m-20 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl"
           >
             How Ceptly organizes your team
           </motion.h2>
@@ -68,7 +68,9 @@ export function HowItWorks() {
                   )}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">{step.title}</h3>
+                  <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
+                    {step.title}
+                  </h3>
                   <p className="mt-2 text-muted-foreground md:text-lg/relaxed">
                     {step.description}
                   </p>

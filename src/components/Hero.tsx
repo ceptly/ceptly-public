@@ -8,6 +8,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useActionState } from "react";
 import { joinWaitlist } from "@/actions/waitlist";
@@ -16,7 +17,7 @@ export function Hero() {
   const [state, action, pending] = useActionState(joinWaitlist, undefined);
 
   return (
-    <section className="font-body [&_h1]:font-brand relative overflow-hidden pt-12 md:pt-20 lg:pt-28 pb-20 md:pb-28 min-h-[85vh] flex items-center">
+    <section className="relative overflow-hidden pt-12 md:pt-20 lg:pt-28 pb-20 md:pb-28 min-h-[85vh] flex items-center">
       {/* Ambient background */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-[#FBFFFA]">
         <div
@@ -45,7 +46,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="text-4xl font-normal tracking-tight sm:text-5xl md:text-6xl lg:text-[3.5rem] lg:leading-[1.08]"
+            className="scroll-m-20 text-4xl font-extrabold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-[3.5rem] lg:leading-[1.08]"
           >
             Your Team&apos;s AI Chief of Staff
           </motion.h1>
@@ -54,7 +55,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.16 }}
-            className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl"
+            className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-xl [&:not(:first-child)]:mt-0"
           >
             Schedule standups in chat, run async check-ins in Slack, and ask
             Team insights questions grounded in what your team actually
@@ -89,10 +90,12 @@ export function Hero() {
                   </p>
                 )}
               </div>
-              <button
+              <Button
                 type="submit"
+                variant="brand"
+                size="lg"
                 disabled={pending}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-6 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring shrink-0 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
+                className="h-12 w-full shrink-0 rounded-lg shadow-lg transition-all hover:scale-[1.02] sm:w-auto"
               >
                 {pending ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
@@ -102,7 +105,7 @@ export function Hero() {
                     <ArrowRight className="h-4 w-4" />
                   </>
                 )}
-              </button>
+              </Button>
             </form>
 
             {state?.message && (

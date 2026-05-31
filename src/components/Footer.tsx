@@ -16,7 +16,7 @@ export function Footer() {
                 width={32}
                 height={32}
               />
-              <span className="font-brand text-left text-[25px] font-bold tracking-tight">
+              <span className="font-heading text-left text-[25px] font-bold tracking-tight">
                 Ceptly
               </span>
             </div>
