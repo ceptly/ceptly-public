@@ -30,7 +30,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem("ceptly_landing_dark");if(s!==null&&!JSON.parse(s))document.documentElement.classList.remove("dark")}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body
         className={`${geistMono.variable} ${aldrich.variable} ${openSans.variable} font-sans antialiased bg-background text-foreground`}
       >
