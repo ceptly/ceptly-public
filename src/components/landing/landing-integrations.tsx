@@ -7,6 +7,11 @@ const INTEGRATIONS = [
     dark: "/integrations/slack.png",
   },
   {
+    name: "Teams",
+    light: "/integrations/teams.png",
+    dark: "/integrations/teams.png",
+  },
+  {
     name: "Linear",
     light: "/integrations/linear-dark.png",
     dark: "/integrations/linear-light.png",
