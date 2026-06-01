@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Aldrich, Geist_Mono, Open_Sans } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 
 import { createSiteMetadata } from "@/lib/site-metadata";
 import "./globals.css";
