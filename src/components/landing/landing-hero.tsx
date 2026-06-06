@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -50,12 +50,12 @@ export function LandingHero() {
         <div className="hero-glow" />
       </div>
       <div className="container hero-in" ref={ref}>
-        <span className="eyebrow reveal">
+        {/* <span className="eyebrow reveal">
           <span className="spark">
             <Sparkles size={14} strokeWidth={2} />
           </span>
           AI chief of staff for flat teams
-        </span>
+        </span> */}
         <h1>
           <span className="line">Your team&apos;s</span>
           <span className="line">
