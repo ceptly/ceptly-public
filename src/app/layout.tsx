@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Aldrich, Geist_Mono, Open_Sans } from "next/font/google";
+import {
+  Aldrich,
+  Crimson_Pro,
+  Crimson_Text,
+  Geist_Mono,
+  Open_Sans,
+} from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -23,6 +29,19 @@ const openSans = Open_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const crimsonText = Crimson_Text({
+  variable: "--font-crimson-text",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
+});
+
+const crimsonPro = Crimson_Pro({
+  variable: "--font-crimson-pro",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = createSiteMetadata();
 
 export default function RootLayout({
@@ -40,7 +59,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistMono.variable} ${aldrich.variable} ${openSans.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${geistMono.variable} ${aldrich.variable} ${openSans.variable} ${crimsonText.variable} ${crimsonPro.variable} font-sans antialiased bg-background text-foreground`}
       >
         {children}
         <Analytics />

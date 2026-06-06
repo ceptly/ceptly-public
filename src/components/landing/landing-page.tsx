@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import "@/styles/landing.css";
 
@@ -12,50 +12,59 @@ import { LandingHeader } from "./landing-header";
 import { LandingHero } from "./landing-hero";
 import { LandingHowItWorks } from "./landing-how-it-works";
 import { LandingIntegrations } from "./landing-integrations";
+import { LandingManifesto } from "./landing-manifesto";
 import { LandingPricing } from "./landing-pricing";
-import { LandingShowcase } from "./landing-showcase";
 
-const THEME_STORAGE_KEY = "ceptly_landing_dark";
-
-function readStoredDark(): boolean {
-  if (typeof window === "undefined") return true;
-  try {
-    const stored = localStorage.getItem(THEME_STORAGE_KEY);
-    if (stored === null) return true;
-    return JSON.parse(stored) as boolean;
-  } catch {
-    return true;
-  }
+/* Scroll-position reveal — robust across layout/font settling. */
+function useReveals() {
+  useEffect(() => {
+    let els = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
+    let raf = 0;
+    const check = () => {
+      raf = 0;
+      const vh = window.innerHeight || 800;
+      els = els.filter((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < vh * 0.9) {
+          el.classList.add("reveal-on");
+          return false;
+        }
+        return true;
+      });
+      if (!els.length) {
+        window.removeEventListener("scroll", onScroll);
+        window.removeEventListener("resize", onScroll);
+      }
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(check);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    check();
+    const t1 = setTimeout(check, 120);
+    const t2 = setTimeout(check, 400);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
 }
 
 export function LandingPage() {
-  const [dark, setDark] = useState(true);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setDark(readStoredDark());
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-    document.documentElement.classList.toggle("dark", dark);
-    try {
-      localStorage.setItem(THEME_STORAGE_KEY, JSON.stringify(dark));
-    } catch {
-      /* ignore */
-    }
-  }, [dark, mounted]);
+  useReveals();
 
   return (
     <div className="landing-page flex min-h-screen flex-col">
-      <LandingHeader dark={dark} onToggleTheme={() => setDark((d) => !d)} />
+      <LandingHeader />
       <main className="flex-1">
         <LandingHero />
-        <LandingShowcase />
         <LandingIntegrations />
         <LandingHowItWorks />
         <LandingFeatures />
+        <LandingManifesto />
         <LandingPricing />
         <LandingFaq />
         <LandingFinalCta />

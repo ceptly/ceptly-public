@@ -6,7 +6,7 @@ import { useState } from "react";
 const FAQS = [
   [
     "Do my teammates need a Ceptly login?",
-    "No. ICs answer right inside Slack DMs—only leaders use the app for rollups and insights, so there's nothing new for your team to learn.",
+    "No. ICs answer right inside Slack DMs — only leaders use the app for rollups and insights, so there's nothing new for your team to learn.",
   ],
   [
     "How does Ceptly know what to ask?",
@@ -14,7 +14,7 @@ const FAQS = [
   ],
   [
     "Where do the answers go?",
-    "Into grounded team insights you can query in chat—blockers, morale, history—plus rollups that land in your leadership channel after each window.",
+    "Into grounded team insights you can query in chat — blockers, morale, history — plus rollups that land in your leadership channel after each window.",
   ],
   [
     "Which tools does it connect to?",
@@ -22,7 +22,7 @@ const FAQS = [
   ],
   [
     "Is my team's data private?",
-    "Answers are used to ground your team's own insights and rollups—nothing more. Role-based access keeps visibility appropriate for founders, leads, and ICs.",
+    "Answers are used to ground your team's own insights and rollups — nothing more. Role-based access keeps visibility appropriate for founders, leads, and ICs.",
   ],
 ] as const;
 
@@ -32,11 +32,11 @@ export function LandingFaq() {
   return (
     <section className="section" id="faq">
       <div className="container">
-        <div className="shead">
+        <div className="shead reveal">
           <span className="kicker">FAQ</span>
           <h2>Questions, answered</h2>
         </div>
-        <div className="faq">
+        <div className="faq reveal">
           {FAQS.map(([question, answer], index) => (
             <div
               className={`faq-item${open === index ? " open" : ""}`}
@@ -49,10 +49,14 @@ export function LandingFaq() {
                 aria-expanded={open === index}
               >
                 <h3>{question}</h3>
-                <ChevronDown size={20} strokeWidth={2} />
+                <span className="chev">
+                  <ChevronDown size={20} strokeWidth={2} />
+                </span>
               </button>
               <div className="faq-a">
-                <p>{answer}</p>
+                <div>
+                  <p>{answer}</p>
+                </div>
               </div>
             </div>
           ))}

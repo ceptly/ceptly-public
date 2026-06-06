@@ -5,8 +5,8 @@ import { APP_SIGNUP_URL } from "@/lib/stripe-config";
 
 const INCLUDED = [
   "Slack conversational check-ins on your schedule",
-  "AI scheduling assistant—set cadence and topics in plain English",
-  "Team insights chat—ask about blockers, morale, and history",
+  "AI scheduling assistant — set cadence and topics in plain English",
+  "Team insights chat — ask about blockers, morale, and history",
   "One-off Slack reach-out and channel standups",
   "Linear, Jira & Monday issue linking",
   "Team roster with role-based access",
@@ -14,37 +14,43 @@ const INCLUDED = [
 
 export function LandingPricing() {
   return (
-    <section className="section pricing" id="pricing">
-      <div className="pricing-glow" aria-hidden />
+    <section className="section paper" id="pricing">
       <div className="container">
-        <div className="shead">
+        <div className="shead reveal">
           <span className="kicker">Pricing</span>
           <h2>One plan. Per seat. No surprises.</h2>
           <p>
-            Everything you need to organize your org&apos;s communication. Try
-            Ceptly free for 10 days.
+            Everything you need to keep your org aligned. Try Ceptly free for 10
+            days.
           </p>
         </div>
-        <div className="plan">
-          <div className="pl-eyebrow">Starter</div>
-          <div className="price">
-            $20<span>/seat/month</span>
+        <div className="pricing-wrap reveal">
+          <div className="pricing-left">
+            <div className="pl-eyebrow">Starter</div>
+            <div className="price">
+              $20<span>/seat/month</span>
+            </div>
+            <div className="terms">
+              Billed per teammate seat via Stripe · cancel anytime
+            </div>
+            <Link className="btn btn-primary" href={APP_SIGNUP_URL}>
+              Start free <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+            <div className="pricing-note">No credit card required</div>
           </div>
-          <div className="terms">
-            Billed per teammate seat via Stripe &middot; cancel anytime
+          <div className="pricing-right">
+            <div className="incl-label">Every seat includes</div>
+            <ul className="incl">
+              {INCLUDED.map((feature) => (
+                <li key={feature}>
+                  <span className="chk">
+                    <Check size={17} strokeWidth={2} />
+                  </span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul>
-            {INCLUDED.map((feature) => (
-              <li key={feature}>
-                <Check size={17} strokeWidth={2} />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-          <Link className="btn btn-cta" href={APP_SIGNUP_URL}>
-            Create account
-            <ArrowRight size={16} strokeWidth={2} />
-          </Link>
         </div>
       </div>
     </section>

@@ -1,61 +1,25 @@
 import Image from "next/image";
 
-const INTEGRATIONS = [
-  {
-    name: "Slack",
-    light: "/integrations/slack.png",
-    dark: "/integrations/slack.png",
-  },
-  {
-    name: "Teams",
-    light: "/integrations/teams.png",
-    dark: "/integrations/teams.png",
-  },
-  {
-    name: "Linear",
-    light: "/integrations/linear-dark.png",
-    dark: "/integrations/linear-light.png",
-  },
-  {
-    name: "Jira",
-    light: "/integrations/Jira_icon.png",
-    dark: "/integrations/Jira_icon.png",
-  },
-  {
-    name: "Monday",
-    light: "/integrations/monday.png",
-    dark: "/integrations/monday.png",
-  },
+const LOGOS = [
+  { name: "Slack", src: "/integrations/slack.png" },
+  { name: "Linear", src: "/integrations/linear.png" },
+  { name: "Jira", src: "/integrations/jira.png" },
+  { name: "Monday", src: "/integrations/monday.png" },
+  { name: "Teams", src: "/integrations/teams.png" },
 ] as const;
 
 export function LandingIntegrations() {
   return (
-    <section className="section tight">
-      <div className="container integ">
-        <span className="integ-label">
-          Works with the tools your team already uses
-        </span>
-        <div className="integ-row">
-          {INTEGRATIONS.map((it) => (
-            <span className="chip" key={it.name}>
-              <Image
-                className="logo-l"
-                src={it.light}
-                alt=""
-                width={20}
-                height={20}
-              />
-              <Image
-                className="logo-d"
-                src={it.dark}
-                alt=""
-                width={20}
-                height={20}
-              />
-              {it.name}
+    <section className="strip">
+      <div className="container strip-in reveal">
+        <div className="strip-label">Lives where your team already works</div>
+        <div className="logos">
+          {LOGOS.map(({ name, src }) => (
+            <span className="logo-chip" key={name}>
+              <Image src={src} alt="" width={19} height={19} />
+              {name}
             </span>
           ))}
-          <span className="chip more">+ more</span>
         </div>
       </div>
     </section>

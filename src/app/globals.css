@@ -186,19 +186,11 @@
     cursor: not-allowed;
   }
   ::selection {
-    background-color: rgb(from var(--color-void) r g b / 0.6);
-    color: var(--color-offwhite);
+    background-color: #b5a5ff;
+    color: #09090b;
   }
   ::-moz-selection {
-    background-color: rgb(from var(--color-void) r g b / 0.6);
-    color: var(--color-offwhite);
-  }
-  .dark ::selection {
-    background-color: rgb(from var(--color-offwhite) r g b / 0.6);
-    color: var(--color-void);
-  }
-  .dark ::-moz-selection {
-    background-color: rgb(from var(--color-offwhite) r g b / 0.6);
-    color: var(--color-void);
+    background-color: #b5a5ff;
+    color: #09090b;
   }
 }

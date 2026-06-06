@@ -5,27 +5,28 @@ import { APP_SIGNUP_URL } from "@/lib/stripe-config";
 
 export function LandingFinalCta() {
   return (
-    <section className="final">
-      <div className="final-grid" aria-hidden />
-      <div className="container final-in">
-        <h2>Turn ambitious vision into effortless momentum</h2>
-        <p
-          className="sub"
-          style={{
-            color: "var(--landing-fg2)",
-            maxWidth: 540,
-            margin: 0,
-            fontSize: 20,
-            lineHeight: 1.6,
-          }}
-        >
-          Schedule your first check-in in minutes. Free for 10 days, no credit
-          card required.
+    <section className="final dark">
+      <div className="hero-bg" aria-hidden>
+        <div className="hero-grid" />
+        <div className="hero-glow" />
+      </div>
+      <div className="container final-in reveal">
+        <h2>
+          Your next standup is on <span className="accent">autopilot</span>.
+        </h2>
+        <p>
+          Set up your first check-in in plain English. Your team answers in Slack
+          tomorrow morning — no meeting required.
         </p>
-        <Link className="btn btn-cta" href={APP_SIGNUP_URL}>
-          Create account
-          <ArrowRight size={16} strokeWidth={2} />
-        </Link>
+        <div className="hero-actions">
+          <Link className="btn btn-primary" href={APP_SIGNUP_URL}>
+            Start free <ArrowRight size={16} strokeWidth={2} />
+          </Link>
+          {/* <Link className="btn btn-outline" href={APP_SIGNUP_URL}>
+            Talk to us
+          </Link> */}
+        </div>
+        <p className="nocard">No credit card · 10-day free trial</p>
       </div>
     </section>
   );

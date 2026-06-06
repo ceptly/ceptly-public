@@ -1,49 +1,40 @@
 import Link from "next/link";
 
+import { APP_LOGIN_URL, APP_SIGNUP_URL } from "@/lib/stripe-config";
+
 import { Brand } from "./brand";
 
 export function LandingFooter() {
   return (
-    <footer className="ft">
+    <footer className="site-footer">
       <div className="container">
-        <div className="ft-top">
-          <div className="ft-brand">
+        <div className="footer-top">
+          <div className="footer-brand">
             <Brand />
-            <p className="slogan">AI organizing organizations.</p>
-            <p>
-              Ceptly&apos;s agents handle coordination and visibility for flat
-              teams&mdash;so ICs focus on deep work and leaders stay aligned
-              without the overhead.
-            </p>
+            <p>AI organizing organizations.</p>
           </div>
-          <div className="ft-cols">
-            <div className="ft-col">
-              <span className="h">Product</span>
-              <Link href="#how">How it works</Link>
-              <Link href="#features">Features</Link>
-              <Link href="#pricing">Pricing</Link>
-              <Link href="#faq">FAQ</Link>
+          <div className="footer-cols">
+            <div className="footer-col">
+              <h4>Product</h4>
+              <Link href="/#how">How it works</Link>
+              <Link href="/#features">Features</Link>
+              <Link href="/#pricing">Pricing</Link>
+              <Link href="/#faq">FAQ</Link>
             </div>
-            {/* <div className="ft-col">
-              <span className="h">Company</span>
-              <Link href="#">About</Link>
-              <Link href="#">Careers</Link>
-              <Link href="#">Contact</Link>
-            </div> */}
-            <div className="ft-col">
-              <span className="h">Legal</span>
+            <div className="footer-col">
+              <h4>Company</h4>
               <Link href="/privacy">Privacy</Link>
-              {/* <Link href="#">Terms</Link> */}
+            </div>
+            <div className="footer-col">
+              <h4>Get started</h4>
+              <Link href={APP_LOGIN_URL}>Sign in</Link>
+              <Link href={APP_SIGNUP_URL}>Start free</Link>
             </div>
           </div>
         </div>
-        <div className="ft-bottom">
-          <span className="copy">
-            &copy; {new Date().getFullYear()} Ceptly Inc. All rights reserved.
-          </span>
-          <Link href="/privacy" className="copy">
-            Privacy Policy
-          </Link>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Ceptly</span>
+          <span>Built for flat teams</span>
         </div>
       </div>
     </footer>
