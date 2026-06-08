@@ -8,7 +8,7 @@ import "@/styles/landing.css";
 
 const PRIVACY_TITLE = "Privacy Policy";
 const PRIVACY_DESCRIPTION =
-  "How Ceptly collects, uses, and protects personal information on ceptly.ai and in the Ceptly service.";
+  "How Ceptly collects, uses, and protects personal information on ceptly.com and in the Ceptly service.";
 
 export const metadata: Metadata = createSiteMetadata({
   title: PRIVACY_TITLE,
@@ -59,9 +59,9 @@ export default function PrivacyPage() {
                 &ldquo;us,&rdquo; or &ldquo;our&rdquo;) respects your privacy.
                 This Privacy Policy explains how we collect, use, disclose, and
                 protect personal information when you visit{" "}
-                <Link href="/">ceptly.ai</Link> (the &ldquo;Site&rdquo;) and
+                <Link href="/">ceptly.com</Link> (the &ldquo;Site&rdquo;) and
                 when you use the Ceptly team coordination service at
-                app.ceptly.ai (the &ldquo;Service&rdquo;).
+                ceptly.ai (the &ldquo;Service&rdquo;).
               </p>
 
               <div className="legal-body">

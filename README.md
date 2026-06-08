@@ -20,13 +20,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployment
 
-Hosted on **AWS Amplify** at [https://ceptly.ai](https://ceptly.ai). Build settings live in `amplify.yml`.
+Hosted on **AWS Amplify** at [https://ceptly.com](https://ceptly.com). Build settings live in `amplify.yml`.
 
 Set these in **Amplify Console → Environment variables** (and copy `.env.example` for local):
 
 | Variable                          | Production example      |
 | --------------------------------- | ----------------------- |
-| `NEXT_PUBLIC_APP_URL`             | `https://app.ceptly.ai` |
+| `NEXT_PUBLIC_APP_URL`             | `https://ceptly.ai`     |
 | `NEXT_PUBLIC_BACKEND_URL`         | `https://api.ceptly.ai` |
 | `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` | Stripe payment link URL |
 
