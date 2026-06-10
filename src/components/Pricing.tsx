@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 import { ArrowRight, Check } from "lucide-react";
 import {
   STRIPE_PAYMENT_LINK,
@@ -123,13 +124,34 @@ export function Pricing() {
                 size="lg"
                 className="h-12 w-full rounded-lg shadow-lg transition-all hover:scale-[1.01]"
               >
-                <Link href={APP_SIGNUP_URL}>
+                <Link
+                  href={APP_SIGNUP_URL}
+                  onClick={() =>
+                    posthog.capture("cta_clicked", {
+                      location: "pricing_page",
+                      cta_text: "Create account",
+                    })
+                  }
+                >
                   Create account
                   <ArrowRight className="size-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="h-10 w-full rounded-lg">
-                <Link href={STRIPE_PAYMENT_LINK}>Subscribe first via Stripe</Link>
+              <Button
+                asChild
+                variant="outline"
+                className="h-10 w-full rounded-lg"
+              >
+                <Link
+                  href={STRIPE_PAYMENT_LINK}
+                  onClick={() =>
+                    posthog.capture("stripe_subscribe_clicked", {
+                      location: "pricing_page",
+                    })
+                  }
+                >
+                  Subscribe first via Stripe
+                </Link>
               </Button>
               <p className="text-center text-xs text-muted-foreground">
                 Recommended: create your account first, then start your trial in

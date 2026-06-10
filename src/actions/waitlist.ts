@@ -1,6 +1,7 @@
 "use server";
 
 import { WaitlistFormSchema, FormState } from "@/lib/auth-schemas";
+import { getPostHogClient } from "@/lib/posthog-server";
 
 export async function joinWaitlist(
   state: FormState,
@@ -70,6 +71,13 @@ export async function joinWaitlist(
         },
       };
     }
+
+    const posthog = getPostHogClient();
+    posthog.capture({
+      distinctId: email,
+      event: "waitlist_joined",
+      properties: { source: "waitlist_form" },
+    });
 
     return {
       message:

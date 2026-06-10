@@ -3,10 +3,16 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import posthog from "posthog-js";
 
 import { APP_SIGNUP_URL } from "@/lib/stripe-config";
 
-const ROLES = ["chief of staff", "scrum master", "product manager", "project lead"];
+const ROLES = [
+  "chief of staff",
+  "scrum master",
+  "product manager",
+  "project lead",
+];
 
 function CyclingRole() {
   const [i, setI] = useState(0);
@@ -68,7 +74,16 @@ export function LandingHero() {
           ships work instead of sitting in another sync.
         </p>
         <div className="hero-actions">
-          <Link className="btn btn-primary" href={APP_SIGNUP_URL}>
+          <Link
+            className="btn btn-primary"
+            href={APP_SIGNUP_URL}
+            onClick={() =>
+              posthog.capture("cta_clicked", {
+                location: "hero",
+                cta_text: "Start free",
+              })
+            }
+          >
             Start free <ArrowRight size={16} strokeWidth={2} />
           </Link>
           <Link className="btn btn-outline" href="#how">

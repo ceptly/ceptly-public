@@ -2,6 +2,7 @@
 
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import posthog from "posthog-js";
 
 const FAQS = [
   [
@@ -45,7 +46,16 @@ export function LandingFaq() {
               <button
                 type="button"
                 className="faq-q"
-                onClick={() => setOpen(open === index ? -1 : index)}
+                onClick={() => {
+                  const isOpening = open !== index;
+                  setOpen(open === index ? -1 : index);
+                  if (isOpening) {
+                    posthog.capture("faq_question_expanded", {
+                      question: question,
+                      question_index: index,
+                    });
+                  }
+                }}
                 aria-expanded={open === index}
               >
                 <h3>{question}</h3>

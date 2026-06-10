@@ -1,5 +1,8 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import posthog from "posthog-js";
 
 import { APP_SIGNUP_URL } from "@/lib/stripe-config";
 
@@ -15,11 +18,20 @@ export function LandingFinalCta() {
           Your next standup is on <span className="accent">autopilot</span>.
         </h2>
         <p>
-          Set up your first check-in in plain English. Your team answers in Slack
-          tomorrow morning — no meeting required.
+          Set up your first check-in in plain English. Your team answers in
+          Slack tomorrow morning — no meeting required.
         </p>
         <div className="hero-actions">
-          <Link className="btn btn-primary" href={APP_SIGNUP_URL}>
+          <Link
+            className="btn btn-primary"
+            href={APP_SIGNUP_URL}
+            onClick={() =>
+              posthog.capture("cta_clicked", {
+                location: "final_cta",
+                cta_text: "Start free",
+              })
+            }
+          >
             Start free <ArrowRight size={16} strokeWidth={2} />
           </Link>
           {/* <Link className="btn btn-outline" href={APP_SIGNUP_URL}>

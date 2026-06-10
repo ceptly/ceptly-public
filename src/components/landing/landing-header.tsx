@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import posthog from "posthog-js";
 
 import { APP_LOGIN_URL, APP_SIGNUP_URL } from "@/lib/stripe-config";
 
@@ -24,10 +27,25 @@ export function LandingHeader() {
           ))}
         </nav>
         <div className="header-actions">
-          <Link className="btn btn-ghost btn-sm" href={APP_LOGIN_URL}>
+          <Link
+            className="btn btn-ghost btn-sm"
+            href={APP_LOGIN_URL}
+            onClick={() =>
+              posthog.capture("sign_in_clicked", { location: "header" })
+            }
+          >
             Sign in
           </Link>
-          <Link className="btn btn-primary btn-sm" href={APP_SIGNUP_URL}>
+          <Link
+            className="btn btn-primary btn-sm"
+            href={APP_SIGNUP_URL}
+            onClick={() =>
+              posthog.capture("cta_clicked", {
+                location: "header",
+                cta_text: "Start free",
+              })
+            }
+          >
             Start free
           </Link>
         </div>

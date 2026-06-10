@@ -1,5 +1,8 @@
+"use client";
+
 import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
+import posthog from "posthog-js";
 
 import { APP_SIGNUP_URL } from "@/lib/stripe-config";
 
@@ -33,7 +36,16 @@ export function LandingPricing() {
             <div className="terms">
               Billed per teammate seat via Stripe · cancel anytime
             </div>
-            <Link className="btn btn-primary" href={APP_SIGNUP_URL}>
+            <Link
+              className="btn btn-primary"
+              href={APP_SIGNUP_URL}
+              onClick={() =>
+                posthog.capture("cta_clicked", {
+                  location: "pricing_landing",
+                  cta_text: "Start free",
+                })
+              }
+            >
               Start free <ArrowRight size={16} strokeWidth={2} />
             </Link>
             <div className="pricing-note">No credit card required</div>
