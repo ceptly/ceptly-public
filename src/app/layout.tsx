@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import {
-  Aldrich,
   Crimson_Pro,
   Crimson_Text,
   Geist_Mono,
@@ -15,12 +14,6 @@ import "./globals.css";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const aldrich = Aldrich({
-  variable: "--font-aldrich",
-  subsets: ["latin"],
-  weight: "400",
 });
 
 const openSans = Open_Sans({
@@ -59,7 +52,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistMono.variable} ${aldrich.variable} ${openSans.variable} ${crimsonText.variable} ${crimsonPro.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${geistMono.variable} ${openSans.variable} ${crimsonText.variable} ${crimsonPro.variable} font-sans antialiased bg-background text-foreground`}
       >
         {children}
         <Analytics />

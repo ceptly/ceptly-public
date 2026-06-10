@@ -60,7 +60,7 @@ export function Header() {
                 width={32}
                 height={32}
               />
-              <span className="font-heading text-left text-[25px] font-bold tracking-tight">
+              <span className="font-brand text-left text-[25px] font-bold tracking-tight">
                 Ceptly
               </span>
             </Link>
@@ -124,7 +124,7 @@ export function Header() {
                 width={28}
                 height={28}
               />
-              <span className="font-heading text-base font-bold tracking-tight">
+              <span className="font-brand text-base font-bold tracking-tight">
                 Ceptly
               </span>
             </Link>
