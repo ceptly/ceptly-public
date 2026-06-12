@@ -26,7 +26,6 @@ The wizard has completed a deep integration of PostHog analytics into the Ceptly
 | `faq_question_expanded` | User expanded an FAQ item. Properties: `question` (text), `question_index` | `src/components/landing/landing-faq.tsx` |
 | `cta_clicked` | User clicked "Create account" on the standalone pricing page. Properties: `location: "pricing_page"`, `cta_text: "Create account"` | `src/components/Pricing.tsx` |
 | `stripe_subscribe_clicked` | User clicked "Subscribe first via Stripe" — bypassing account creation. Properties: `location: "pricing_page"` | `src/components/Pricing.tsx` |
-| `waitlist_joined` | User successfully joined the waitlist (server-side). Properties: `source: "waitlist_form"`. Uses email as `distinctId` for identity stitching | `src/actions/waitlist.ts` |
 
 ## Next steps
 

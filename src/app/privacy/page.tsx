@@ -67,9 +67,8 @@ export default function PrivacyPage() {
               <div className="legal-body">
                 <Section title="1. Information we collect">
                   <p>
-                    <strong>Information you provide.</strong> When you join our
-                    waitlist, create an account, subscribe, or contact us, we
-                    may collect your name, email address, password (stored in
+                    <strong>Information you provide.</strong> When you create an
+                    account, subscribe, or contact us, we may collect your name, email address, password (stored in
                     hashed form), workspace and team details, billing information
                     processed by our payment provider, and any messages you send
                     us.

@@ -27,7 +27,6 @@ Set these in **Amplify Console → Environment variables** (and copy `.env.examp
 | Variable                          | Production example      |
 | --------------------------------- | ----------------------- |
 | `NEXT_PUBLIC_APP_URL`             | `https://ceptly.ai`     |
-| `NEXT_PUBLIC_BACKEND_URL`         | `https://api.ceptly.ai` |
 | `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` | Stripe payment link URL |
 
 ## Environment variables
@@ -37,9 +36,6 @@ Create a `.env.local` file for local development:
 ```bash
 # Stripe Payment Link (optional — defaults to production link)
 NEXT_PUBLIC_STRIPE_PAYMENT_LINK=https://buy.stripe.com/eVqcN63tWaPS0NI1QkefC00
-
-# Waitlist (Hero form)
-NEXT_PUBLIC_BACKEND_URL=http://localhost:3001
 ```
 
 Configure trial length, success URL, and billing in the [Stripe Dashboard](https://dashboard.stripe.com/payment-links) for your payment link.
