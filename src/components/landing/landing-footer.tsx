@@ -11,7 +11,7 @@ export function LandingFooter() {
         <div className="footer-top">
           <div className="footer-brand">
             <Brand />
-            <p>AI organizing organizations.</p>
+            <p>Your team&apos;s AI chief of staff.</p>
           </div>
           <div className="footer-cols">
             <div className="footer-col">
