@@ -14,6 +14,7 @@ import { LandingHowItWorks } from "./landing-how-it-works";
 import { LandingIntegrations } from "./landing-integrations";
 import { LandingManifesto } from "./landing-manifesto";
 import { LandingPricing } from "./landing-pricing";
+import { LandingVideo } from "./landing-video";
 
 /* Scroll-position reveal — robust across layout/font settling. */
 function useReveals() {
@@ -62,6 +63,7 @@ export function LandingPage() {
       <main className="flex-1">
         <LandingHero />
         <LandingIntegrations />
+        <LandingVideo />
         <LandingHowItWorks />
         <LandingFeatures />
         <LandingManifesto />

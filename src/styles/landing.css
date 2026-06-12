@@ -1012,3 +1012,20 @@ html {
     animation: none;
   }
 }
+
+/* ============================================================
+   Ad video
+   ============================================================ */
+.landing-page .video-section {
+  background: var(--surface-paper);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.landing-page .video-frame {
+  overflow: hidden;
+  background: #000;
+}
+.landing-page .video-el {
+  display: block;
+  width: 100%;
+  height: auto;
+}
