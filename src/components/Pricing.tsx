@@ -19,18 +19,35 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const included = [
+const shared = [
   "Slack conversational check-ins on your schedule",
-  "Up to 5 scheduled check-in programs per workspace",
-  "Up to 10 custom questions per program",
   "AI scheduling assistant — set cadence and topics in plain English",
   "Team insights chat — ask about blockers, morale, and check-in history",
   "One-off Slack reach-out to any teammate",
-  "Linear integration for issue-aware team Q&A",
+  "Linear, Jira & Monday issue linking",
   "Team roster with Slack and Linear import",
-  "Per-seat pricing for workspace members (pending invites count too)",
   "Role-based access for founders, admins, leads, and ICs",
 ];
+
+const tiers = [
+  {
+    name: "Starter",
+    price: "$20",
+    blurb: "10-day free trial · billed per teammate seat · cancel anytime",
+    featured: false,
+    limits: [
+      "Up to 5 workspace members",
+      "Up to 5 scheduled agents running at once",
+    ],
+  },
+  {
+    name: "Pro",
+    price: "$30",
+    blurb: "For teams that have outgrown the Starter caps",
+    featured: true,
+    limits: ["Unlimited workspace members", "Unlimited scheduled agents"],
+  },
+] as const;
 
 const faqs = [
   {
@@ -79,8 +96,9 @@ export function Pricing() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-muted-foreground md:text-lg"
           >
-            One plan with everything you need to organize your orgs
-            communication. Try Ceptly free for 10 days.
+            Two plans with everything you need to organize your org&apos;s
+            communication. Start on Starter, upgrade to Pro when you outgrow the
+            caps. Try Ceptly free for 10 days.
           </motion.p>
         </div>
 
@@ -88,84 +106,106 @@ export function Pricing() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="mx-auto max-w-lg"
+          className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2"
         >
-          <Card className="border-[#56FF3C]/20 bg-background/80">
-            <CardHeader className="text-center">
-              <CardDescription className="text-sm font-medium uppercase tracking-wide">
-                Starter
-              </CardDescription>
-              <CardTitle className="text-4xl font-extrabold tracking-tight">
-                $20
-                <span className="text-lg font-medium text-muted-foreground">
-                  /seat/month
-                </span>
-              </CardTitle>
-              <p className="text-sm text-muted-foreground">
-                10-day free trial · billed per teammate seat · cancel anytime
-              </p>
-            </CardHeader>
+          {tiers.map((tier) => (
+            <Card
+              key={tier.name}
+              className={
+                tier.featured
+                  ? "border-[#56FF3C] bg-background/80 ring-1 ring-[#56FF3C]/40"
+                  : "border-[#56FF3C]/20 bg-background/80"
+              }
+            >
+              <CardHeader className="text-center">
+                <CardDescription className="text-sm font-medium uppercase tracking-wide">
+                  {tier.name}
+                </CardDescription>
+                <CardTitle className="text-4xl font-extrabold tracking-tight">
+                  {tier.price}
+                  <span className="text-lg font-medium text-muted-foreground">
+                    /seat/month
+                  </span>
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">{tier.blurb}</p>
+              </CardHeader>
 
-            <CardContent>
-              <ul className="space-y-3">
-                {included.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm">
-                    <Check className="mt-0.5 size-4 shrink-0 text-[#56FF3C]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
+              <CardContent>
+                <ul className="space-y-3">
+                  {tier.limits.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm font-semibold">
+                      <Check className="mt-0.5 size-4 shrink-0 text-[#56FF3C]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                  {shared.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm">
+                      <Check className="mt-0.5 size-4 shrink-0 text-[#56FF3C]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
 
-            <CardFooter className="flex flex-col gap-3">
-              <Button
-                asChild
-                variant="brand"
-                size="lg"
-                className="h-12 w-full rounded-lg shadow-lg transition-all hover:scale-[1.01]"
-              >
-                <Link
-                  href={APP_SIGNUP_URL}
-                  onClick={() =>
-                    posthog.capture("cta_clicked", {
-                      location: "pricing_page",
-                      cta_text: "Create account",
-                    })
-                  }
+              <CardFooter className="flex flex-col gap-3">
+                <Button
+                  asChild
+                  variant={tier.featured ? "brand" : "outline"}
+                  size="lg"
+                  className="h-12 w-full rounded-lg shadow-lg transition-all hover:scale-[1.01]"
                 >
-                  Create account
-                  <ArrowRight className="size-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="h-10 w-full rounded-lg"
-              >
-                <Link
-                  href={STRIPE_PAYMENT_LINK}
-                  onClick={() =>
-                    posthog.capture("stripe_subscribe_clicked", {
-                      location: "pricing_page",
-                    })
-                  }
-                >
-                  Subscribe first via Stripe
-                </Link>
-              </Button>
-              <p className="text-center text-xs text-muted-foreground">
-                Recommended: create your account first, then start your trial in
-                the app. Already subscribed?{" "}
-                <Link
-                  href={`${APP_LOGIN_URL}?mode=sign-up&checkout=success`}
-                  className="font-medium text-foreground underline-offset-4 hover:underline"
-                >
-                  Sign up
-                </Link>
-              </p>
-            </CardFooter>
-          </Card>
+                  <Link
+                    href={APP_SIGNUP_URL}
+                    onClick={() =>
+                      posthog.capture("cta_clicked", {
+                        location: "pricing_page",
+                        cta_text: "Create account",
+                        tier: tier.name,
+                      })
+                    }
+                  >
+                    Create account
+                    <ArrowRight className="size-4" />
+                  </Link>
+                </Button>
+                {tier.featured ? null : (
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="h-10 w-full rounded-lg"
+                  >
+                    <Link
+                      href={STRIPE_PAYMENT_LINK}
+                      onClick={() =>
+                        posthog.capture("stripe_subscribe_clicked", {
+                          location: "pricing_page",
+                        })
+                      }
+                    >
+                      Subscribe first via Stripe
+                    </Link>
+                  </Button>
+                )}
+              </CardFooter>
+            </Card>
+          ))}
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mx-auto mt-6 max-w-2xl text-center text-xs text-muted-foreground"
+        >
+          Recommended: create your account first, then start your trial in the
+          app. Already subscribed?{" "}
+          <Link
+            href={`${APP_LOGIN_URL}?mode=sign-up&checkout=success`}
+            className="font-medium text-foreground underline-offset-4 hover:underline"
+          >
+            Sign up
+          </Link>
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

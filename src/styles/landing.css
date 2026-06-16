@@ -721,6 +721,38 @@ html {
   }
 }
 
+.landing-page .tier-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.landing-page .tier-card {
+  padding: 44px 40px;
+  border: 1px solid var(--border-default);
+  background: var(--surface-card);
+}
+.landing-page .tier-card-featured {
+  border-color: var(--text-accent);
+  box-shadow: 0 0 0 1px var(--text-accent);
+}
+.landing-page .tier-card .price {
+  margin: 14px 0 6px;
+  font-size: clamp(44px, 5vw, 64px);
+}
+.landing-page .tier-card .btn {
+  margin: 6px 0 28px;
+}
+.landing-page .tier-card .incl li strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+@media (max-width: 820px) {
+  .landing-page .tier-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ============================================================
    FAQ
    ============================================================ */
