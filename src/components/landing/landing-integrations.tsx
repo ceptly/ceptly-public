@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const LOGOS = [
   { name: "Slack", src: "/integrations/slack.png" },
-  { name: "Linear", src: "/integrations/linear.png" },
   { name: "Jira", src: "/integrations/jira.png" },
   { name: "Monday", src: "/integrations/monday.png" },
+  { name: "Linear", src: "/integrations/linear.png" },
   // MS Teams integration temporarily disabled — uncomment to re-enable.
   // { name: "Teams", src: "/integrations/teams.png" },
 ] as const;
