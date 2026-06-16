@@ -11,7 +11,6 @@ export function LandingFinalCta() {
     <section className="final dark">
       <div className="hero-bg" aria-hidden>
         <div className="hero-grid" />
-        <div className="hero-glow" />
       </div>
       <div className="container final-in reveal">
         <h2>

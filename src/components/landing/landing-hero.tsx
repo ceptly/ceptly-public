@@ -8,10 +8,9 @@ import posthog from "posthog-js";
 import { APP_SIGNUP_URL } from "@/lib/stripe-config";
 
 const ROLES = [
-  "chief of staff",
   "scrum master",
-  "product manager",
-  "project lead",
+  "project manager",
+  "middle manager",
 ];
 
 function CyclingRole() {
@@ -53,7 +52,6 @@ export function LandingHero() {
     <section className="hero dark" id="top">
       <div className="hero-bg" aria-hidden>
         <div className="hero-grid" />
-        <div className="hero-glow" />
       </div>
       <div className="container hero-in" ref={ref}>
         {/* <span className="eyebrow reveal">
@@ -69,9 +67,9 @@ export function LandingHero() {
           </span>
         </h1>
         <p className="hero-sub">
-          Ceptly is a collection of deployable AI agents that runs check-ins,
-          rollups, and team insights <b>in the background</b> — so your team
-          ships work instead of sitting in another sync.
+          Ceptly deploys AI agents for the management layer. Standups,
+          retrospectives, and team insights <b>in the background</b>. So your team
+          ships work instead of spending time in a meeting.
         </p>
         <div className="hero-actions">
           <Link

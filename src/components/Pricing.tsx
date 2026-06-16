@@ -31,7 +31,7 @@ const shared = [
 
 const tiers = [
   {
-    name: "Starter",
+    name: "Basic",
     price: "$20",
     blurb: "10-day free trial · billed per teammate seat · cancel anytime",
     featured: false,
@@ -41,9 +41,9 @@ const tiers = [
     ],
   },
   {
-    name: "Pro",
+    name: "Business",
     price: "$30",
-    blurb: "For teams that have outgrown the Starter caps",
+    blurb: "For teams that have outgrown the Basic caps",
     featured: true,
     limits: ["Unlimited workspace members", "Unlimited scheduled agents"],
   },
@@ -97,7 +97,7 @@ export function Pricing() {
             className="text-muted-foreground md:text-lg"
           >
             Two plans with everything you need to organize your org&apos;s
-            communication. Start on Starter, upgrade to Pro when you outgrow the
+            communication. Start on Basic, upgrade to Business when you outgrow the
             caps. Try Ceptly free for 10 days.
           </motion.p>
         </div>

@@ -17,7 +17,7 @@ const SHARED = [
 
 const TIERS = [
   {
-    name: "Starter",
+    name: "Basic",
     price: "$20",
     blurb: "Billed per teammate seat via Stripe · cancel anytime",
     highlight: false,
@@ -28,9 +28,9 @@ const TIERS = [
     cta: "Start free",
   },
   {
-    name: "Pro",
+    name: "Business",
     price: "$30",
-    blurb: "For teams that have outgrown the Starter caps",
+    blurb: "For teams that have outgrown the Basic caps",
     highlight: true,
     limits: ["Unlimited workspace members", "Unlimited scheduled agents"],
     cta: "Start free",
@@ -45,8 +45,8 @@ export function LandingPricing() {
           <span className="kicker">Pricing</span>
           <h2>Two plans. Per seat. No surprises.</h2>
           <p>
-            Everything you need to keep your org aligned. Start on Starter, move
-            to Pro when you outgrow the caps. Try Ceptly free for 10 days.
+            Everything you need to keep your org aligned. Start on Basic, move
+            to Business when you outgrow the caps. Try Ceptly free for 10 days.
           </p>
         </div>
         <div className="tier-grid reveal">
@@ -75,17 +75,15 @@ export function LandingPricing() {
                 {tier.cta} <ArrowRight size={16} strokeWidth={2} />
               </Link>
               <ul className="incl">
-                {tier.limits.map((feature) => (
-                  <li key={feature}>
+                {tier.highlight && (
+                  <li>
                     <span className="chk">
                       <Check size={17} strokeWidth={2} />
                     </span>
-                    <span>
-                      <strong>{feature}</strong>
-                    </span>
+                    <span>All Basic features +</span>
                   </li>
-                ))}
-                {SHARED.map((feature) => (
+                )}
+                {tier.limits.map((feature) => (
                   <li key={feature}>
                     <span className="chk">
                       <Check size={17} strokeWidth={2} />
@@ -93,6 +91,15 @@ export function LandingPricing() {
                     <span>{feature}</span>
                   </li>
                 ))}
+                {!tier.highlight &&
+                  SHARED.map((feature) => (
+                    <li key={feature}>
+                      <span className="chk">
+                        <Check size={17} strokeWidth={2} />
+                      </span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
               </ul>
             </div>
           ))}
