@@ -1055,6 +1055,8 @@ html {
 .landing-page .video-frame {
   overflow: hidden;
   background: #000;
+  max-width: var(--container-max);
+  margin: 0 auto;
 }
 .landing-page .video-el {
   display: block;
