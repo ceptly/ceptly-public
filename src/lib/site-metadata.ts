@@ -5,21 +5,22 @@ export const SITE_URL =
 
 export const SITE_NAME = "Ceptly";
 
-export const DEFAULT_TITLE = "Ceptly — Your Team's AI Chief of Staff";
+export const DEFAULT_TITLE = "Ceptly — AI Agents for the Management Layer";
 
 export const DEFAULT_DESCRIPTION =
-  "AI agents for flat organizations. Ceptly aligns leadership direction with daily execution through async Slack check-ins, synthesized digests, and on-demand team intelligence.";
+  "Deploy AI agents that run the management layer. Ceptly's scrum masters and project managers handle standups, follow-ups, and org intelligence in Slack — so your team ships work instead of sitting in meetings.";
 
 export const KEYWORDS = [
-  "AI chief of staff",
+  "AI agents for teams",
+  "AI project manager",
+  "AI scrum master",
+  "management automation",
   "flat organization",
-  "team management",
   "Slack check-ins",
   "async standups",
-  "executive visibility",
-  "startup management",
+  "org intelligence",
   "Linear integration",
-  "team intelligence",
+  "startup management",
 ];
 
 export function createSiteMetadata(overrides: Metadata = {}): Metadata {

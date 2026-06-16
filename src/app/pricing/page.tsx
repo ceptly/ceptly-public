@@ -7,7 +7,7 @@ import { createSiteMetadata, SITE_URL } from "@/lib/site-metadata";
 
 const PRICING_TITLE = "Pricing";
 const PRICING_DESCRIPTION =
-  "Ceptly pricing: Basic at $20/seat/month and Business at $30/seat/month, each with a 10-day free trial. Slack check-ins, AI scheduling, team insights, and Linear, Jira & Monday integration for flat organizations.";
+  "Ceptly pricing: Basic at $20/seat/month and Business at $30/seat/month, each with a 10-day free trial. Deploy persona-based AI agents — scrum masters and project managers — with Slack check-ins, org intelligence, and Linear, Jira & Monday integration for flat organizations.";
 
 export const metadata: Metadata = createSiteMetadata({
   title: PRICING_TITLE,

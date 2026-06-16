@@ -1,31 +1,31 @@
 import {
-  Calendar,
   MessageSquare,
-  Send,
+  Network,
   Sparkles,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 
 const FEATURES: { Icon: LucideIcon; title: string; body: string }[] = [
   {
-    Icon: Calendar,
-    title: "Scheduling in chat",
-    body: "Describe a cadence in plain English; Ceptly builds a publishable schedule — who answers, how often, and where rollups land.",
+    Icon: Users,
+    title: "Persona-based agents",
+    body: "Deploy scrum masters and project managers. Each persona comes with its own tools, duties, and communication style.",
+  },
+  {
+    Icon: Sparkles,
+    title: "Deploy & manage from chat",
+    body: "Spin up, edit, and query agents in plain English. Attach files as context and @mention staffers or #channels to direct the work.",
   },
   {
     Icon: MessageSquare,
     title: "Slack check-ins",
-    body: "On schedule, Ceptly DMs each teammate for a short, conversational standup. Progress, blockers, and linked issues — without forms.",
+    body: "Agents run short, conversational check-ins over DMs and channels. Progress, blockers, and linked issues — without forms.",
   },
   {
-    Icon: Sparkles,
-    title: "Team insights",
-    body: "Ask about blockers, morale, or check-in history in chat. Answers are grounded in what your team actually said.",
-  },
-  {
-    Icon: Send,
-    title: "One-off reach-out",
-    body: "Fire a single Slack DM to any teammate for a quick follow-up, or broadcast a standup to a whole channel.",
+    Icon: Network,
+    title: "Org intelligence",
+    body: "Import your team roster, then let Ceptly map who works with whom and who reports to whom — grounding every agent conversation.",
   },
 ];
 
@@ -35,10 +35,10 @@ export function LandingFeatures() {
       <div className="container">
         <div className="shead reveal">
           <span className="kicker">What Ceptly does</span>
-          <h2>Visibility without the overhead</h2>
+          <h2>The management layer, run by agents</h2>
           <p>
-            Everything a chief of staff would handle — coordination, follow-up,
-            and grounded answers — run by an agent.
+            Coordination, follow-up, and grounded team insights, all automated
+            in the background while your team keeps shipping.
           </p>
         </div>
         <div className="feat-grid">

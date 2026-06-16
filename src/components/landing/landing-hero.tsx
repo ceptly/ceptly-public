@@ -58,7 +58,7 @@ export function LandingHero() {
           <span className="spark">
             <Sparkles size={14} strokeWidth={2} />
           </span>
-          AI chief of staff for flat teams
+          AI agents for the management layer
         </span> */}
         <h1>
           <span className="line">Your team&apos;s</span>
@@ -67,9 +67,10 @@ export function LandingHero() {
           </span>
         </h1>
         <p className="hero-sub">
-          Ceptly deploys AI agents for the management layer. Standups,
-          retrospectives, and team insights <b>in the background</b>. So your team
-          ships work instead of spending time in a meeting.
+          Ceptly deploys AI agents that run the management layer — scrum masters
+          and project managers that handle standups, follow-ups, and coordination{" "}
+          <b>in the background</b>. So your team ships work instead of sitting in a
+          meeting.
         </p>
         <div className="hero-actions">
           <Link

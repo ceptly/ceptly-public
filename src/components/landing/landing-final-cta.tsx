@@ -14,10 +14,11 @@ export function LandingFinalCta() {
       </div>
       <div className="container final-in reveal">
         <h2>
-          Your next standup is on <span className="accent">autopilot</span>.
+          Put your next standup on{" "}
+          <span className="accent">autopilot</span>.
         </h2>
         <p>
-          Set up your first check-in in plain English. Your team answers in
+          Deploy your first agent in plain English. It works with your team in
           Slack tomorrow morning — no meeting required.
         </p>
         <div className="hero-actions">

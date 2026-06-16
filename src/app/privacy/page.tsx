@@ -75,7 +75,8 @@ export default function PrivacyPage() {
                   </p>
                   <p>
                     <strong>Service and integration data.</strong> When you
-                    connect third-party tools such as Slack, Linear, or Jira, we
+                    connect third-party tools such as Slack, Linear, Jira, or
+                    Monday, we
                     receive data needed to provide the Service—for example,
                     workspace identifiers, user profile information, check-in
                     responses, conversation content, and issue metadata from

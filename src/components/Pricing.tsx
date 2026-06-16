@@ -20,12 +20,12 @@ import {
 import { Button } from "@/components/ui/button";
 
 const shared = [
+  "Persona-based agents — scrum masters and project managers",
+  "Deploy & manage agents from chat in plain English",
   "Slack conversational check-ins on your schedule",
-  "AI scheduling assistant — set cadence and topics in plain English",
-  "Team insights chat — ask about blockers, morale, and check-in history",
-  "One-off Slack reach-out to any teammate",
+  "Org intelligence chat — ask about blockers, morale, and reporting lines",
   "Linear, Jira & Monday issue linking",
-  "Team roster with Slack and Linear import",
+  "Team roster with Slack and Jira import",
   "Role-based access for founders, admins, leads, and ICs",
 ];
 
@@ -63,12 +63,12 @@ const faqs = [
   {
     question: "Who is Ceptly for?",
     answer:
-      "Flat organizations — startups and teams of dense Individual Contributors.",
+      "Flat organizations — startups and teams of dense Individual Contributors that want to run management on AI agents instead of hiring for it.",
   },
   {
     question: "What integrations are supported?",
     answer:
-      "Slack is required for check-ins and reach-out. Linear is optional and powers issue-aware answers in team insights chat.",
+      "Slack is required for the agents' check-ins and reach-out. Linear, Jira, and Monday are optional and power issue-aware answers in org intelligence chat.",
   },
 ];
 
@@ -88,7 +88,7 @@ export function Pricing() {
             transition={{ duration: 0.5 }}
             className="scroll-m-20 text-3xl font-extrabold tracking-tight text-balance sm:text-4xl md:text-5xl"
           >
-            Simple pricing for flat teams
+Simple pricing for the management layer
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -96,9 +96,9 @@ export function Pricing() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-muted-foreground md:text-lg"
           >
-            Two plans with everything you need to organize your org&apos;s
-            communication. Start on Basic, upgrade to Business when you outgrow the
-            caps. Try Ceptly free for 10 days.
+            Two plans with everything you need to run the management layer on AI
+            agents. Start on Basic, upgrade to Business when you outgrow the caps.
+            Try Ceptly free for 10 days.
           </motion.p>
         </div>
 

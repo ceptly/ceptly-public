@@ -7,10 +7,10 @@ import posthog from "posthog-js";
 import { APP_SIGNUP_URL } from "@/lib/stripe-config";
 
 const SHARED = [
+  "Persona-based agents — scrum masters and project managers",
+  "Deploy & manage agents from chat in plain English",
   "Slack conversational check-ins on your schedule",
-  "AI scheduling assistant — set cadence and topics in plain English",
-  "Team insights chat — ask about blockers, morale, and history",
-  "One-off Slack reach-out and channel standups",
+  "Org intelligence chat — ask about blockers, morale, and reporting lines",
   "Linear, Jira & Monday issue linking",
   "Team roster with role-based access",
 ] as const;
@@ -45,8 +45,9 @@ export function LandingPricing() {
           <span className="kicker">Pricing</span>
           <h2>Two plans. Per seat. No surprises.</h2>
           <p>
-            Everything you need to keep your org aligned. Start on Basic, move
-            to Business when you outgrow the caps. Try Ceptly free for 10 days.
+            Everything you need to run the management layer on AI agents. Start
+            on Basic, move to Business when you outgrow the caps. Try Ceptly free
+            for 10 days.
           </p>
         </div>
         <div className="tier-grid reveal">

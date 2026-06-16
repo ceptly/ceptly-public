@@ -55,7 +55,7 @@ export default async function Image() {
             maxWidth: 920,
           }}
         >
-          Your team&apos;s AI chief of staff
+          AI agents for the management layer
         </div>
         <div
           style={{
@@ -65,7 +65,7 @@ export default async function Image() {
             maxWidth: 920,
           }}
         >
-          Async Slack check-ins, digests, and org intelligence
+          Scrum masters & project managers, run by AI
         </div>
       </div>
     </div>,

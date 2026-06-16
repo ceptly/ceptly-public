@@ -21,9 +21,10 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-muted-foreground max-w-xs">
-              AI organizing organizations. Ceptly&apos;s agents handle
-              coordination and visibility for flat teams—so ICs focus on deep
-              work and leaders stay aligned without the overhead.
+              AI agents for the management layer. Ceptly&apos;s scrum masters and
+              project managers handle coordination and visibility for flat
+              teams—so ICs focus on deep work and leaders stay aligned without the
+              overhead.
             </p>
           </div>
         </div>

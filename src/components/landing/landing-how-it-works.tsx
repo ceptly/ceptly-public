@@ -4,20 +4,20 @@ const STEPS = [
   {
     num: "01",
     Icon: Calendar,
-    title: "Describe the cadence",
-    body: "Tell Ceptly who checks in and how often, in plain English. It drafts a schedule you publish — and adjust anytime.",
+    title: "Deploy an agent from chat",
+    body: "Describe the persona you want, like scrum master or project manager, and where it works in plain English. Ceptly drafts it; you publish and adjust anytime.",
   },
   {
     num: "02",
     Icon: MessageSquare,
-    title: "Your team answers in Slack",
-    body: "Each teammate gets a short, conversational DM or group message. Progress, blockers, and linked Linear, Jira & Monday issues. No forms, no app to learn.",
+    title: "Your team works with it in Slack",
+    body: "Agents run check-ins, follow-ups, and coordination over DMs and channels. Progress, blockers, and linked Linear, Jira & Monday issues. No forms, no app for ICs to learn.",
   },
   {
     num: "03",
     Icon: FileText,
     title: "You read, not attend",
-    body: "Grounded rollups land after every window. Ask about blockers or morale in chat, answered from what your team actually said.",
+    body: "Grounded updates organized and available to you. Progress, blockers, all queryable in chat.",
   },
 ] as const;
 
@@ -27,10 +27,10 @@ export function LandingHowItWorks() {
       <div className="container">
         <div className="shead reveal">
           <span className="kicker">How it works</span>
-          <h2>Set it up once. Then stop attending.</h2>
+          <h2>Deploy once. Then stop managing.</h2>
           <p>
-            Describe a cadence in plain English. Your team answers in Slack. You
-            read the rollup.
+            Spin up an agent in plain English. Your team works with it in Slack.
+            You read the rollup.
           </p>
         </div>
         <div className="steps">
